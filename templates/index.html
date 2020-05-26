@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/img2.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Covid-19</h1>
+            <span class="subheading">Crisis Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Welcome to this page!!!</p>
+        <p>Covid-19 Tracker is an e service offered to the users. It is mainly used for crisis comminication. </p>
+        <p>To access this application, you have to register yourself and login using the registered credentials.</p>
+      </div>
+    </div>
+  </div>
+ {% endblock %}

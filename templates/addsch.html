@@ -1,0 +1,57 @@
+{% extends "mentorlayout.html" %}
+{% block body %}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/med4.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h3>Welcome Mentor,{{ user }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Add Your Schedule</p>
+          <form name="sentMessage" id="contactForm" action = "/addsched" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder=" Name" id="name" name='name' required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+           <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Available Day</label>
+                <input type="text" class="form-control" placeholder="Available Day" id="day" name='day' required data-validation-required-message="Please enter availabe day">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Timings</label>
+                <input type="text" class="form-control" placeholder="Timings" id="time" name='time' required data-validation-required-message="Please enter timings">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Zoom Link</label>
+                <input type="text" class="form-control" placeholder="Zoom Link" id="zoomlink" name='zoomlink' required data-validation-required-message="Please enter zoom link">
+                <p class="help-block text-danger"></p>
+              </div>  
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Add Schedule</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

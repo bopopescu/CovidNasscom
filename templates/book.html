@@ -1,0 +1,65 @@
+{% extends "menteelayout.html" %}
+{% block body %}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/med4.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h3>Welcome mentee,{{ user }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Book Appointment</p>
+          <form name="sentMessage" id="contactForm" action = "/bookapp" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" id="name" name='name' required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+           <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>emailid</label>
+                <input type="email" class="form-control" placeholder="Emailid" id="emailid" name='emailid' required data-validation-required-message="Please enter emailid">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Mentor Name</label>
+                <input type="text" class="form-control" placeholder="Mentor Name" id="mname" name='mname' required data-validation-required-message="Please enter doctor name">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Day of appointment</label>
+                <input type="text" class="form-control" placeholder="Day of Appointment" id="day" name='day' required data-validation-required-message="Please enter day of appointment">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Timings</label>
+                <input type="text" class="form-control" placeholder="Timings" id="time" name="time" required data-validation-required-message="Please enter contact number">
+                <p class="help-block text-danger"></p>
+              </div>
+              <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Book Appointment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

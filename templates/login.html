@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/med5.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Login</h1>
+              <span class="subheading">Get Started</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Login Page </p>
+          <form name="sentMessage" id="contactForm" action = "/login" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Username" id="name" name='email' required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password" name = 'password' id="password" required data-validation-required-message="Please enter a Password."></input>
+                <p class="help-block text-danger"></p>
+              </div>
+              <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

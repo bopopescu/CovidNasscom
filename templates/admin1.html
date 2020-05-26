@@ -1,0 +1,15 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/med4.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h3>Welcome admin,{{ user }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
